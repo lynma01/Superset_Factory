@@ -1,7 +1,8 @@
 #objects.py
-class Account:
+
+class Account(models.Model):
     def __init__(self, username, email, date_joined):
-        self.username = username
+        self.username = models.ForeignKey(Profile)
         self.email = email
         self.date_joined = date_joined
 
@@ -9,7 +10,7 @@ class Account:
         return '%s (%s)' % (self.username, self.email)
 
 
-class Profile:
+class Profile(models.Model):
 
     GENDER_MALE = 'm'
     GENDER_FEMALE = 'f'

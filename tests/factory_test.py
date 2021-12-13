@@ -1,8 +1,6 @@
 import unittest
-
-from . import business_logic
-from . import factories
-from . import objects
+from app import factories
+from app import models
 
 
 class MyTestCase(unittest.TestCase):
@@ -22,4 +20,4 @@ class MyTestCase(unittest.TestCase):
 
         stats = business_logic.profile_stats(profiles)
         self.assertEqual({'Earth': 6, 'Mars': 2}, stats.planets)
-        self.assertLess(stats.genders[objects.Profile.GENDER_FEMALE], 2)
+        self.assertLess(stats.genders[models.Profile.GENDER_FEMALE], 2)
