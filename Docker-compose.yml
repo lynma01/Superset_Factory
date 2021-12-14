@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  # app :
+  #  build: ./app/
+  db:
+    build: ./database/
+  pgadmin:
+    build: ./database/pgadmin/
+    ports:
+      - "5050:80"
